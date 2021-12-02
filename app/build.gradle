@@ -1,9 +1,18 @@
 plugins {
     id 'com.android.application'
     id 'com.chaquo.python'
+    id 'com.mob.sdk'
 }
 
 android {
+    signingConfigs {
+        Signning {
+            storeFile file('C:\\Users\\86188\\Audio.jks')
+            storePassword '12345678'
+            keyAlias 'key0'
+            keyPassword '12345678'
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
@@ -36,7 +45,13 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.Signning
         }
+    }
+    MobSDK {
+        appKey "34d8c7a99e574"
+        appSecret "3e2f51513f742169e9cb19594586f2e8"
+        SMSSDK {}
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -54,4 +69,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.kaopiz:kprogresshud:1.2.0'
     implementation 'org.tensorflow:tensorflow-lite:2.5.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'io.github.shashank02051997:FancyToast:2.0.0'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.github.searchy2:CustomAlertViewDialogue:2.6.1'
+    implementation 'com.github.zcweng:switch-button:0.0.3@aar'
+
 }
