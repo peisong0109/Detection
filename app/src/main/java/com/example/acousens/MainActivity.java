@@ -388,14 +388,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         String path = getExternalFilesDir(Environment.DIRECTORY_MUSIC) + "/test.wav";
         boolean fileExist = fileIsExists(path);
         if(fileExist & agree){
-            Toast.makeText(MainActivity.this,"开始上传"+f.getAbsolutePath(), Toast.LENGTH_LONG).show();
+//            Toast.makeText(MainActivity.this,"开始上传"+f.getAbsolutePath(), Toast.LENGTH_LONG).show();
             try {
                 //上传图片
                 AudioUploading.run(f, pro, phoneNum);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }else {Toast.makeText(MainActivity.this,"文件不存在或未同意上传", Toast.LENGTH_LONG).show();}
+        }else {
+//            Toast.makeText(MainActivity.this,"文件不存在或未同意上传", Toast.LENGTH_LONG).show();
+        }
     }
 
 
